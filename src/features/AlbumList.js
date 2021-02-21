@@ -20,14 +20,28 @@ const Wrapper = styled.ul`
   justify-content: space-around;
   align-items: center;
   padding-inline-start: 0px;
+
+  ${({ favorite }) =>
+    favorite &&
+    `
+    z-index: 10;
+    position: absolute;
+    height: 100vh;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #666666;
+    color: white;
+  `}
 `;
 
-function AlbumList({ data, dispatch, star }) {
+function AlbumList({ data, dispatch, star, favorite }) {
   return (
-    <Wrapper>
+    <Wrapper favorite={favorite}>
       {data?.map((i, j) => {
         return (
-          <Album key={j} data={i} dispatch={dispatch} star>
+          <Album key={j} data={i} dispatch={dispatch} star={star}>
             <ImageContainer
               onClick={() => dispatch({ type: "SELECTED", value: i })}
             >

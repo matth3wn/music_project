@@ -48,9 +48,8 @@ function SearchResults() {
       <button onClick={() => dispatch({ type: "SHOW_FAVORITE" })}>
         Show/Hide Favorites ☆
       </button>
-      <hr />
       {showFavorite ? (
-        <AlbumList data={favorites} dispatch={dispatch} star={false} />
+        <AlbumList data={favorites} dispatch={dispatch} star={false} favorite />
       ) : null}
       <hr />
       {filter?.map((name) => (

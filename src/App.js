@@ -9,6 +9,9 @@ const Header = styled.h1`
   color: white;
   background-color: black;
   letter-spacing: 3px;
+  padding: 5px;
+  margin-block-start: 0;
+  margin-block-end: 0;
 `;
 function App() {
   return (
